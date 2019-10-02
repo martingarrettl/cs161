@@ -1,0 +1,9 @@
+q1: G++ provides an error when attempting to compile.
+q2: another error: endl was not declared in this scope as well as cout not in scope
+q3: everything compiles and runs fine
+q4: g++ returns a series of errors like terminating character missing etc.
+q5: everything compiles however the program doesnt print a new line before returning
+to user control in the console.
+q6: Another series of errors including terminating characters not declared in scope, etc.
+q7: most intense error yet. Literally 30+ lines long.
+q8: have to allocate the space in memory for the integer to be stored later.

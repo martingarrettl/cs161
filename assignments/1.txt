@@ -1,0 +1,18 @@
+include iostream, cstdlib
+
+initialize variables:
+user defined:
+random, salary, months, car_cost, car_sold, misconduct, taxyear, state,
+
+predefined:
+gross, annual, profit, deduction, avgsale
+srand(time(0));
+random = (rand() % 10) / 100
+avgsale = car_cost + random
+annual = months * salary
+profit = car_sold * (avgsale - car_cost)
+deduction = 0
+misconduct = userdefined****
+if misconduct > 0 {
+  deduction = 100 * pow (2, misconduct)
+}
