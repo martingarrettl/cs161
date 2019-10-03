@@ -73,7 +73,7 @@ int main () {
     }
   //2018
   } else if (taxyear == 1) {
-    cout << "For taxyear 2018 " << endl;
+    cout << "For taxyear 2018 ";
     if (workstate == 0) {
       cout << "and working in state A: " << endl;
       taxrate = (grossincome * 0.08);
