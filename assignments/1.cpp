@@ -5,10 +5,9 @@ using namespace std;
 
 int main () {
 // initializing variables
-  int salary, months, car_cost, car_sold, misconduct, taxyear, gross,
-  annual, deduction, grossincome;
+  int salary, months, car_cost, car_sold, misconduct, taxyear,
+  annual, deduction, grossincome, netincome, workstate, avgsale;
   float random, profit, taxrate;
-  char workstate;
 
 // defining stuff i'll need later
   srand(time(0));
@@ -17,7 +16,7 @@ int main () {
   taxrate = 0;
 
 // user defined variable stuff
-  cout << "Monthly Salary " ;
+  cout << "Monthly Salary: " ;
   cin >> salary;
   cout << "Months worked (1 - 12): ";
   cin >> months;
@@ -27,51 +26,92 @@ int main () {
   cin >> car_sold;
   cout << "Misconducts observed: ";
   cin >> misconduct;
-  cout << "Tax year (2017, 2018): ";
+  cout << "Tax year (0 - 2017, 1 - 2018): ";
   cin >> taxyear;
-  cout << "State of operation (A, B, C): ";
+  cout << "State of operation (A - 0, B - 1, C - 2): ";
   cin >> workstate;
 
 // gross income calculations
   annual = months * salary;
-  cout << "Annual Salary: " << annual << endl;
-  profit = car_sold * ((car_cost * (1 + random)) - car_cost);
-  cout << "Total profit: " << profit << endl;
+  avgsale = car_cost * (1 + random);
+  profit = car_sold * (avgsale - car_cost);
 
   if (misconduct > 0) {
-    deduction = 100 * pow(2, misconduct);
+    deduction = 100 * pow(2, misconduct - 1);
   }
 
   grossincome = annual + (profit * 0.02) - deduction;
-  cout << "Gross Income: " << grossincome << endl;
 
 // tax calculations
-  if (taxyear = 2017) {
-    if (workstate = 'A') {
-      cout << "workstate A";
-    } else if (workstate = 'B'){
-      cout << "workstate B";
-    } else if (workstate = 'C'){
-      cout << "workstate C";
+  //2017
+  if (taxyear == 0) {
+    cout << "For tax year 2017 ";
+    if (workstate == 0) {
+      cout << "and working in state A: " << endl;
+      taxrate = grossincome * 0.06;
+    } else if (workstate == 1){
+      cout << "and working in state B: " << endl;
+      if (grossincome < 2000) {
+        taxrate = 0;
+      } else if (grossincome < 10000) {
+        taxrate = 100;
+      } else {
+        taxrate = (grossincome * 0.1) + 100;
+      }
+    } else if (workstate == 2){
+      cout << "and working in state C: " << endl;
+      if (grossincome < 3500) {
+        taxrate = grossincome * 0.05;
+      } else if (grossincome < 9000) {
+        taxrate = (grossincome * 0.07) + 175;
+      } else if (grossincome < 125000) {
+        taxrate = (grossincome * 0.09) + 560;
+      } else {
+        taxrate = (grossincome * 0.099) + 11000;
+      }
     } else {
-      cout << "Invalid state provided";
+      cout << "Invalid state provided" << endl;
       return 0;
     }
-  } else if (taxyear = 2018) {
-    if (workstate = 'A') {
-      cout << "workstate A";
-    } else if (workstate = 'B'){
-      cout << "workstate B";
-    } else if (workstate = 'C'){
-      cout << "workstate C";
+  //2018
+  } else if (taxyear == 1) {
+    cout << "For taxyear 2018 " << endl;
+    if (workstate == 0) {
+      cout << "and working in state A: " << endl;
+      taxrate = (grossincome * 0.08);
+    } else if (workstate == 1){
+      cout << "and working in state B: " << endl;
+      if (grossincome < 2500) {
+        taxrate = 0;
+      } else if (grossincome < 10000) {
+        taxrate = 115;
+      } else {
+        taxrate = (grossincome * 0.105) + 115;
+      }
+    } else if (workstate == 2){
+      cout << "and working in state C: " << endl;
+      if (grossincome < 3450) {
+        taxrate = grossincome * 0.05;
+      } else if (grossincome < 8700) {
+        taxrate = (grossincome * 0.07) + 172.5;
+      } else if (grossincome < 125000) {
+        taxrate = (grossincome * 0.09) + 540;
+      } else {
+        taxrate = (grossincome * 0.099) + 11007;
+      }
     } else {
-      cout << "Invalid state provided";
+      cout << "Invalid state provided" << endl;
       return 0;
     }
   } else {
-    cout << "invalid tax year provided";
+    cout << "invalid tax year provided" << endl;
     return 0;
   }
+netincome = grossincome - (grossincome * taxrate);
 
+cout << "The average selling price is $" << avgsale << " for which ";
+cout << "you earn 2% of the profit, which is $" << profit * 0.02 << endl;
+cout << "Gross income is: $" << grossincome << endl;
+cout << "The tax you need to pay is: $" << taxrate; << endl;
 return 0;
 }
