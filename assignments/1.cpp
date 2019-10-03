@@ -11,9 +11,7 @@ int main () {
 
 // defining stuff i'll need later
   srand(time(0));
-  random = 0.0 + (rand()%5 + 5) / 100.0;
   deduction = 0;
-  taxrate = 0;
 
 // user defined variable stuff
   cout << "Monthly Salary: " ;
@@ -33,7 +31,7 @@ int main () {
 
 // gross income calculations
   annual = months * salary;
-  avgsale = car_cost * (1 + random);
+  avgsale = car_cost * (1 + ((rand()%5 + 5) / 100.0));
   profit = car_sold * (avgsale - car_cost);
 
   if (misconduct > 0) {
@@ -107,11 +105,14 @@ int main () {
     cout << "invalid tax year provided" << endl;
     return 0;
   }
-netincome = grossincome - (grossincome * taxrate);
+// end tax calculations
 
 cout << "The average selling price is $" << avgsale << " for which ";
-cout << "you earn 2% of the profit, which is $" << profit * 0.02 << endl;
-cout << "Gross income is: $" << grossincome << endl;
-cout << "The tax you need to pay is: $" << taxrate; << endl;
+cout << "you earn 2% of the profit on " << car_sold << " cars sold" ;
+cout << ", which is $"<< profit * 0.02 << endl;
+cout << "Your gross income is: $" << grossincome << endl;
+cout << "The tax you need to pay is: $" << taxrate << endl;
+cout << "Your remaining income is: $" << grossincome - taxrate << endl;
+
 return 0;
 }
