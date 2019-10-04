@@ -1,18 +1,43 @@
-include iostream, cstdlib
+Problem Statement:
 
-initialize variables:
-user defined:
-random, salary, months, car_cost, car_sold, misconduct, taxyear, state,
+Problem Analysis:
 
-predefined:
-gross, annual, profit, deduction, avgsale
-srand(time(0));
-random = (rand() % 10) / 100
-avgsale = car_cost + random
-annual = months * salary
-profit = car_sold * (avgsale - car_cost)
+Plan/Design:
+
+This program will calculate a users gross income, yearly tax and finally their
+net income.
+
+//get user inputs
+ask user to input values for months worked, monthly salary, cost of car,
+# of cars sold, # of misconducts, the tax year and the state they worked in
+
+//calculate gross income
+annualincome = months work * monthly salary
+average car sale = car cost * (1 + randomly generated % between 5 & 10)
+profit = cars sold * (average car sale * car cost)
+
 deduction = 0
-misconduct = userdefined****
-if misconduct > 0 {
-  deduction = 100 * pow (2, misconduct)
-}
+if "misconducts > 0"
+  deduction = 100 * 2^(misconducts - 1)
+
+gross income = annual + (profit * 2%) - deduction
+
+//calculate tax based on year and state
+if "tax year 2017"
+  if "state == A"
+    tax = calculate state A 2017 tax
+  else if "state == B"
+    tax = calculate state B 2017 tax
+  else
+    tax = calculate state C 2017 tax
+
+else if "tax year 2018"
+  if "state == A"
+    tax = calculate state A 2018 tax
+  else if "state == B"
+    tax = calculate state B 2018 tax
+  else
+    tax = calculate state C 2018 tax
+
+//display gross income, tax, and calculate net net income
+print "average selling price is $ " + av

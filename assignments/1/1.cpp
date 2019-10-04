@@ -1,3 +1,12 @@
+/******************************************************************************
+**Program: assignment1.cpp
+**Author: Garrett Martin
+**Date: 10/03/19
+**Description: A program to calculate income and tax
+**Input: salary, months, car_cost, car_sold, misconduct, taxyear, state
+**Output: gross income, taxrate, netincome
+******************************************************************************/
+
 #include <iostream>
 using namespace std;
 #include <cstdlib>
@@ -8,10 +17,6 @@ int main () {
   int salary, months, car_cost, car_sold, misconduct, taxyear,
   annual, deduction, grossincome, netincome, workstate, avgsale;
   float random, profit, taxrate;
-
-// defining stuff i'll need later
-  srand(time(0));
-  deduction = 0;
 
 // user defined variable stuff
   cout << "Monthly Salary: " ;
@@ -31,9 +36,11 @@ int main () {
 
 // gross income calculations
   annual = months * salary;
+  srand(time(0));
   avgsale = car_cost * (1 + ((rand()%5 + 5) / 100.0));
   profit = car_sold * (avgsale - car_cost);
 
+  deduction = 0;
   if (misconduct > 0) {
     deduction = 100 * pow(2, misconduct - 1);
   }
