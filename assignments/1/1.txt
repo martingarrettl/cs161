@@ -48,12 +48,12 @@ else if "tax year 2018"
      else
         tax = calculate state b 2018 bracket 2 taxes
   else
-     if "state b 2018 tax bracket 1"
-        tax = calculate state b 2018 bracket 1 taxes
+     if "state c 2018 tax bracket 1"
+        tax = calculate state c 2018 bracket 1 taxes
      else if "state b 2018 tax bracket 2"
-        tax = calculate state b 2018 bracket 2 taxes
+        tax = calculate state c 2018 bracket 2 taxes
      else
-        tax = calculate state b 2018 bracket 3 taxes
+        tax = calculate state c 2018 bracket 3 taxes
 
 //display gross income, tax, and calculate net net income
 print "average selling price is $ " + av
