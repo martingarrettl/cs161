@@ -15,8 +15,9 @@ using namespace std;
 int main () {
 // initializing variables
   int salary, months, car_cost, car_sold, misconduct, taxyear,
-  annual, deduction, grossincome, netincome, workstate, avgsale;
+  annual, deduction, grossincome, netincome, avgsale;
   float random, profit, taxrate;
+  char workstate;
 
 // user defined variable stuff
   cout << "Monthly Salary: " ;
@@ -29,9 +30,9 @@ int main () {
   cin >> car_sold;
   cout << "Misconducts observed: ";
   cin >> misconduct;
-  cout << "Tax year (0 - 2017, 1 - 2018): ";
+  cout << "Tax year (2017, 2018): ";
   cin >> taxyear;
-  cout << "State of operation (A - 0, B - 1, C - 2): ";
+  cout << "State of operation (A, B, C): ";
   cin >> workstate;
 
 // gross income calculations
@@ -49,12 +50,12 @@ int main () {
 
 // tax calculations
   //2017
-  if (taxyear == 0) {
+  if (taxyear == 2017) {
     cout << "For tax year 2017 ";
-    if (workstate == 0) {
+    if (workstate == 'A') {
       cout << "and working in state A: " << endl;
       taxrate = grossincome * 0.06;
-    } else if (workstate == 1){
+    } else if (workstate == 'B'){
       cout << "and working in state B: " << endl;
       if (grossincome < 2000) {
         taxrate = 0;
@@ -63,7 +64,7 @@ int main () {
       } else {
         taxrate = (grossincome * 0.1) + 100;
       }
-    } else if (workstate == 2){
+    } else if (workstate == 'C'){
       cout << "and working in state C: " << endl;
       if (grossincome < 3500) {
         taxrate = grossincome * 0.05;
@@ -79,12 +80,12 @@ int main () {
       return 0;
     }
   //2018
-  } else if (taxyear == 1) {
+} else if (taxyear == 2018) {
     cout << "For taxyear 2018 ";
-    if (workstate == 0) {
+    if (workstate == 'A') {
       cout << "and working in state A: " << endl;
       taxrate = (grossincome * 0.08);
-    } else if (workstate == 1){
+    } else if (workstate == 'B'){
       cout << "and working in state B: " << endl;
       if (grossincome < 2500) {
         taxrate = 0;
@@ -93,7 +94,7 @@ int main () {
       } else {
         taxrate = (grossincome * 0.105) + 115;
       }
-    } else if (workstate == 2){
+    } else if (workstate == 'C'){
       cout << "and working in state C: " << endl;
       if (grossincome < 3450) {
         taxrate = grossincome * 0.05;
