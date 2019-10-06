@@ -4,7 +4,7 @@
 **Date: 10/03/19
 **Description: A program to calculate income and tax
 **Input: salary, months, car_cost, car_sold, misconduct, taxyear, state
-**Output: gross income, taxrate, netincome
+**Output: gross income, taxrate
 ******************************************************************************/
 
 #include <iostream>
@@ -129,8 +129,8 @@ int main () {
     cout << endl << "invalid tax year provided" << endl;
     return 0;
   }
-// end tax calculations
 
+//Spit out everything at the end for the user to read
 cout << "The average selling price is $" << avgsale << " for which ";
 cout << "you earn 2% of the profit on " << car_sold << " cars sold" ;
 cout << ", which is $"<< profit * 0.02 << endl;
