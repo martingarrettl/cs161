@@ -27,17 +27,33 @@ if "tax year 2017"
   if "state == A"
     tax = calculate state A 2017 tax
   else if "state == B"
-    tax = calculate state B 2017 tax
+     if "state b 2017 tax bracket 1 requirement"
+        tax = calculate state b 2017 bracket 1 taxes
+     else
+        tax = calculate state b 2017 bracket 2 taxes
   else
-    tax = calculate state C 2017 tax
+     if "state c 2017 tax bracket 1 requirement"
+        tax = calculate state c 2017 bracket 1 taxes
+     else if "state b 2017 tax bracket 2 requirement"
+        tax = calculate state c 2017 bracket 2 taxes
+     else
+        tax = calculate state c 2017 bracket 3 taxes
 
 else if "tax year 2018"
   if "state == A"
     tax = calculate state A 2018 tax
   else if "state == B"
-    tax = calculate state B 2018 tax
+     if "state b 2018 tax bracket 1"
+        tax = calculate state b 2018 bracket 1 taxes
+     else
+        tax = calculate state b 2018 bracket 2 taxes
   else
-    tax = calculate state C 2018 tax
+     if "state b 2018 tax bracket 1"
+        tax = calculate state b 2018 bracket 1 taxes
+     else if "state b 2018 tax bracket 2"
+        tax = calculate state b 2018 bracket 2 taxes
+     else
+        tax = calculate state b 2018 bracket 3 taxes
 
 //display gross income, tax, and calculate net net income
 print "average selling price is $ " + av
