@@ -86,8 +86,8 @@ int main () {
       return 0;
     }
   //2018
-}
-else if (taxyear == 2018) {
+  }
+  else if (taxyear == 2018) {
     cout << "For tax year 2018 ";
     if (workstate == 'A') {
       cout << "and working in state A: " << endl;
