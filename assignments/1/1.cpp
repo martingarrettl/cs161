@@ -14,8 +14,8 @@ using namespace std;
 
 int main () {
 // initializing variables
-  int salary, months, car_cost, car_sold, misconduct = 0, taxyear,
-  annual, deduction, grossincome, avgsale;
+  int salary, months, car_cost, car_sold, misconduct, taxyear,
+  annual, deduction = 0, grossincome, avgsale;
   float random, profit, taxrate;
   char workstate;
 
@@ -30,6 +30,7 @@ int main () {
   cin >> car_sold;
   cout << "Misconducts observed: ";
   cin >> misconduct;
+  cout << "Salary: " << salary << endl << "Months: " << months << endl;
   cout << "Tax year (2017, 2018): ";
   cin >> taxyear;
   cout << "State of operation (A, B, C): ";
@@ -42,10 +43,12 @@ int main () {
   profit = car_sold * (avgsale - car_cost);
 
   if (misconduct > 0) {
-    deduction = 100 * pow(2, misconduct - 1);
+    deduction = (100 * pow(2, misconduct - 1));
   }
+  cout << deduction << endl;
 
   grossincome = annual + (profit * 0.02) - deduction;
+  cout << grossincome <<  endl;
 
 // tax calculations
   //2017
