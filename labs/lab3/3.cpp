@@ -51,21 +51,26 @@ srand(time(0));
   for (int i = 0; i < numcount; i++) {
     char x;
     x = rand() % 9 + 49;
+    cout << x << endl;
     passfinal += x;
   }
   for (int i = 0; i < uppercount; i++) {
     char x;
     x = rand() % 26 + 65;
+    cout << x << endl;
     passfinal += x;
   }
   for (int i = 0; i < lowercount; i++) {
     char x;
     x = rand() % 26 + 97;
+    cout << x << endl;
     passfinal += x;
   }
 //final password output
 
+
   cout << passfinal << endl;
+  passfinal = "";
   cout << "Would you like to create another password (0 - no, 1 - yes)? ";
   cin >> repeat;
 } while (repeat == 1);
