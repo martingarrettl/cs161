@@ -1,9 +1,22 @@
+/*
+Author: Garrett Martin
+Title: Lab 3
+Date: 10/14/2019
+Description: Generate a passcode based on user specifications for length,
+             uppercase, lowercase, and numeric content.
+*/
+
+
 #include <iostream>
+#include <cstdlib>
+#include <string>
+
 using namespace std;
 
 int main () {
   int repeat, length, letters, uppercase, lowercase, numbers, uppercount = 0,
-      lowercount = 0, numcount = 0, passfinal;
+      lowercount = 0, numcount = 0;
+  string passupper, passlower, passnum, passfinal = "";
 
 do {
 //welcome message and user inputs
@@ -33,17 +46,28 @@ do {
     cin >> numcount;
   }
 //generate password
-/*
-  for (int i = 0; i < length; i++) {
-    char x;
-    srand(0);
-    x = rand()
-    passfinal += x;
-  }
-*/
+srand(time(0));
 
+for (int i = 0; i < length; i++) {
+  for (int i = 0; i < numcount; i++) {
+    char x;
+    x = rand() % 9;
+    passnum += x;
+  }
+  for (int i = 0; i < uppercount; i++) {
+    char x;
+    x = rand() % 26 + 65;
+    passupper += x;
+  }
+  for (int i = 0; i < lowercount; i++) {
+    char x;
+    x = rand() % 26 + 97;
+    passlower += x;
+  }
+}
 //final password output
-  cout << passfinal << endl;
+
+  cout << passnum << passupper << passlower << endl;
   cout << "Would you like to create another password (0 - no, 1 - yes)? ";
   cin >> repeat;
 } while (repeat == 1);
