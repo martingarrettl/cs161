@@ -30,7 +30,8 @@ int main () {
     cin >> numcount;
   }
 //generate password
-  
+
+
 //final password output
   cout << passfinal << endl;
   cout << "Would you like to create another password (0 - no, 1 - yes)";
