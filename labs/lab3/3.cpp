@@ -16,7 +16,7 @@ using namespace std;
 int main () {
   int repeat, length, letters, uppercase, lowercase, numbers, uppercount = 0,
       lowercount = 0, numcount = 0;
-  string passupper, passlower, passnum, passfinal = "";
+  string passfinal;
 
 do {
 //welcome message and user inputs
@@ -45,29 +45,27 @@ do {
     cout << "How many numbers (0 - " << length - lowercount - uppercount << ")? ";
     cin >> numcount;
   }
-//generate password
+//generate password components and add to final password
 srand(time(0));
 
-for (int i = 0; i < length; i++) {
   for (int i = 0; i < numcount; i++) {
     char x;
-    x = rand() % 9;
-    passnum += x;
+    x = rand() % 9 + 49;
+    passfinal += x;
   }
   for (int i = 0; i < uppercount; i++) {
     char x;
     x = rand() % 26 + 65;
-    passupper += x;
+    passfinal += x;
   }
   for (int i = 0; i < lowercount; i++) {
     char x;
     x = rand() % 26 + 97;
-    passlower += x;
+    passfinal += x;
   }
-}
 //final password output
 
-  cout << passnum << passupper << passlower << endl;
+  cout << passfinal << endl;
   cout << "Would you like to create another password (0 - no, 1 - yes)? ";
   cin >> repeat;
 } while (repeat == 1);

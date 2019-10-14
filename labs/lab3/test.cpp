@@ -6,17 +6,25 @@ using namespace std;
 
 int main() {
   int num;
-  char lletters, uletters, test;
-  string final;
+  char letters;
+  string test;
 
   srand(time(0));
-  lletters = rand() % 26 + 97;
-  cout << lletters << endl;
-
-  for (int i; i < 5; i++) {
-    uletters = rand() % 26 + 65;
-    test =+ uletters;
+/*
+  for (int i = 0; i < 5; i++) {
+    letters = rand() % 10 + 1;
+    cout << letters << endl;
+    test += letters;
   }
-cout << test << endl;
+*/
+
+  for (int i = 0; i < 10; i++) {
+    int x;
+    char y;
+    x = rand() % 9 + 49;
+    y = x;
+    cout << x << endl << "y: " << y << endl;
+}
+//cout << test << endl;
 return 0;
 }
