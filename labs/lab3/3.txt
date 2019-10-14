@@ -1,0 +1,10 @@
+rm - delete a file, add -r to delete folders
+mv - move a file, and or rename one
+cp - copy a file
+man - linux manual, use it to look up commands and shit
+
+cp assign1.cpp ../temp.cpp
+
+rm assign/temp.cpp
+
+:set number - turn on line numbers
