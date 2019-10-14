@@ -2,39 +2,51 @@
 using namespace std;
 
 int main () {
-  int length, letters, uppercase, lowercase, numbers, uppercount, lowercount, numcount;
+  int repeat, length, letters, uppercase, lowercase, numbers, uppercount = 0,
+      lowercount = 0, numcount = 0, passfinal;
 
+do {
 //welcome message and user inputs
   cout << "Welcome to Password Creator!" << endl << endl;
-  cout << "How long do you want your password to be? "
-  cout << "Do you want letters in your password? ";
+  cout << "How long do you want your password to be? ";
+  cin >> length;
+  cout << "Do you want letters in your password (0 - no, 1 - yes)? ";
   cin >> letters;
   if (letters > 0) {
-    cout << "Do you want some of those letters uppercase? (0 - no, 1 - yes)";
+    cout << "Do you want some of those letters uppercase (0 - no, 1 - yes)? ";
     cin >> uppercase;
     if (uppercase > 0) {
-      cout << "How many uppercase letters? (0 - " + length ") ";
+      cout << "How many uppercase letters (0 - " << length << ")? ";
       cin >> uppercount;
     }
-    cout << "Do you want some of those letters lowercase? (0 - no, 1 - yes)";
+    cout << "Do you want some of those letters lowercase (0 - no, 1 - yes)? ";
     cin >> lowercase;
     if (lowercase > 0) {
-      cout << "How many lowercase letters? (0 - " << (length - uppercount) << ") ";
+      cout << "How many lowercase letters (0 - " << (length - uppercount) << ")? ";
       cin >> lowercount;
     }
   }
-  cout << "Do you want numbers in your password? (0 - no, 1 - yes)";
+  cout << "Do you want numbers in your password (0 - no, 1 - yes)? ";
   cin >> numbers;
   if (numbers > 0) {
-    cout << "How many numbers? (0 - " << length - lowercount - uppercount << ") ";
+    cout << "How many numbers (0 - " << length - lowercount - uppercount << ")? ";
     cin >> numcount;
   }
 //generate password
-
+/*
+  for (int i = 0; i < length; i++) {
+    char x;
+    srand(0);
+    x = rand()
+    passfinal += x;
+  }
+*/
 
 //final password output
   cout << passfinal << endl;
-  cout << "Would you like to create another password (0 - no, 1 - yes)";
-  cin << repeat;
+  cout << "Would you like to create another password (0 - no, 1 - yes)? ";
+  cin >> repeat;
+} while (repeat == 1);
+
 return 0;
 }
