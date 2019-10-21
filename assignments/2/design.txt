@@ -1,0 +1,36 @@
+check_range(int a, int b, int c)
+  if c > a:
+    if c < b:
+      return true
+  else:
+    return false
+
+is_capital(char a)
+  TKTKTK
+
+is_even(int a)
+  if a % 2 == 0:
+    return true
+  else:
+    return false
+    
+is_odd(int a)
+  if a % 2 == 0:
+    return false
+  else:
+    return true
+
+equality_test(int a, int b)
+  if a < b:
+    return -1
+  else if a == b:
+    return 0
+  else:
+    return 1
+
+  float_is_equal(float a, float b, float c)
+    if abs(a - b) <= c && abs(b - a) <= c:
+      return true
+
+  is_int(string a)
+    if a == 
