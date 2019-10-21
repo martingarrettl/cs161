@@ -6,14 +6,18 @@ check_range(int a, int b, int c)
     return false
 
 is_capital(char a)
-  TKTKTK
+  if a >= 65:
+    if a <= 90:
+      return true
+  else:
+    return false
 
 is_even(int a)
   if a % 2 == 0:
     return true
   else:
     return false
-    
+
 is_odd(int a)
   if a % 2 == 0:
     return false
@@ -28,9 +32,79 @@ equality_test(int a, int b)
   else:
     return 1
 
-  float_is_equal(float a, float b, float c)
-    if abs(a - b) <= c && abs(b - a) <= c:
-      return true
+float_is_equal(float a, float b, float c)
+  if abs(a - b) <= c && abs(b - a) <= c:
+    return true
 
-  is_int(string a)
-    if a == 
+is_int(string a)
+  if a[0] >= 48:
+    if a[0] <= 57:
+      return true
+  else
+    return false
+
+numbers_present(string a)
+  for i in a.length:
+    if a[i] >= 48:
+      if a[i] <= 57:
+        return true
+      else:
+        return false
+
+letters_present(string a)
+    for i in a.length:
+      if a[i] >= 65:
+        if a[i] <= 90:
+          return true
+      else if a[i] >= 97:
+        if a[i] <= 122:
+          return true
+      else:
+          return false
+
+//totally unsure of this one as it stands
+contains_sub_string(string a, string b)
+  if b > a
+    return false
+  check each character of a for character in b
+  return false if all characters of b in sequence aren't in a
+
+word_count(string a)
+  int count = 0
+  for i in a.length():
+    if a[i] == 32:
+      count++
+  return count + 1
+
+to_upper(string a)
+  string new
+  for i in a.length:
+    if a[i] >= 97:
+      if a[i] <= 122:
+        new += (a[i] - 32)
+    else:
+      string += a[i]
+  return new
+
+to_lower(string a)
+  string new
+  for i in a.length:
+    if a[i] >= 65:
+      if a[i] <= 90:
+        new += (a[i] + 32)
+    else:
+      string += a[i]
+  return new
+
+get_int()
+  int i = 0
+  string a
+  cout "input an integer:"
+  cin a
+  do:
+    cout "Invalid input, must be an integer (0-9): "
+    cin  a
+
+  while a > 57 & a < 48
+
+  return a (but as an int and not a string)

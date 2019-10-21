@@ -11,6 +11,18 @@
 #include <string> // getline(), .length(), size(), .at()
 #include <cmath> // pow(), abs()
 
+bool is_int(string num) {
+  for (int i=0; i < num.length(); ++i) {
+    if (a[i] >= 48) {
+      if (a[i] <= 57) {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+}
+
 main() {
 
 
