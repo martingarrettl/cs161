@@ -62,7 +62,7 @@ Pre-Conditions: Take three integers
 Post-Conditions: Return true if test_value is between upper and lower bound
 ***************************************************************************/
 bool check_range(int test_value, int lower_bound, int upper_bound) {
-  if ((upper_bound > test_value) && (lower_bound < test_value)) {
+  if (upper_bound > test_value && lower_bound < test_value) {
     return true;
   }
 }
@@ -76,7 +76,7 @@ Post-Conditions: Return true if string value is within range of integers
 ***************************************************************************/
 bool is_int(string num) {
   for (int i=0; i < num.length(); ++i) {
-    if (a[i] >= 48) && (a[i] <= 57) {
+    if (a[i] >= 48 && a[i] <= 57) {
       return true;
     }
   }
@@ -90,8 +90,10 @@ Pre-Conditions: take a char parameter
 Post-Conditions: return true if char is a capital letter
 ***************************************************************************/
 bool is_capital(char letter) {
-  if (letter >= 65) && (letter <= 90) {
+  if (letter >= 65 && letter <= 90) {
     return true;
+  } else {
+    return false;
   }
 }
 
