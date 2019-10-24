@@ -1,19 +1,12 @@
 #include <iostream> // cin.clear(), cin.ignore(), cin.fail()
 #include <string> // getline(), .length(), size(), .at()
-#include <cmath> // pow(), abs()
-
-bool is_capital(char letter) {
-  if (letter >= 65 && letter <= 90) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
+#include "helper_functions.h"
 using namespace std;
 
+//test conditions
 int main() {
-  cout << is_capital('A') << endl;
-  cout << is_capital('b') << endl;
+  string str = "a";
+  cout << get_int(str) << endl;
+
   return 0;
 }
