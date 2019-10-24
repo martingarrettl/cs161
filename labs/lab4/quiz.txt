@@ -1,0 +1,7 @@
+Vim Quiz:
+
+	auto indent -  :set autoindent
+	dd - delete lines
+	y3- yanks 3 lines
+	p - pastes clipboard
+	:setindent -
