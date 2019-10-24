@@ -165,7 +165,6 @@ Parameters: string sentence
 Pre-Conditions: Take string as parameter
 Post-Conditions: Return string
 ***************************************************************************/
-
 string to_upper(string sentence) {
   string new_string;
   for (int i; i < sentence.length(); i++) {
@@ -185,7 +184,6 @@ Parameters:
 Pre-Conditions:
 Post-Conditions:
 ***************************************************************************/
-
 string to_lower(string sentence) {
   string new_string;
   for (int i; i < sentence.length(); i++) {
@@ -205,7 +203,6 @@ Parameters: char character
 Pre-Conditions: take character input
 Post-Conditions: return decimal value of character as an int
 ***************************************************************************/
-
 int atoi(char character){
   int i = character;
   return i;
@@ -219,7 +216,6 @@ Parameters: string prompt
 Pre-Conditions: takes string as parameter
 Post-Conditions: returns provided integer
 ***************************************************************************/
-
 int get_int() {
   string prompt = "";
   cout << "Input an integer: ";
