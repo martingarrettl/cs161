@@ -216,25 +216,25 @@ int atoi(char character){
 }
 
 /****************************************************************************
-Function:
-Description:
-Parameters:
-Pre-Conditions:
+Function: get_int()
+Description: Takes a prompt from the user as a string literal, checks if input
+             is a valid integer, returns provided integer
+Parameters: string prompt
+Pre-Conditions: takes string as parameter
 Post-Conditions:
 ***************************************************************************/
-/*
-int get_int(string prompt) {
-  int stop = 0;
-  char test = atoi(prompt);
+
+int get_int() {
+  string prompt = "";
+  cout << "Input an integer: ";
+  cin >> prompt;
   do {
-    if (is_int(test) == 1) {
-      stop = 1;
-      int value = atoi(test);
-      return value;
+    if (is_int(prompt) == 1) {
+      break;
     } else {
       cout << "Invalid input, please input an integer: ";
       cin >> prompt;
     }
-  } while(stop = 0);
+  } while (is_int(prompt) == 0);
+  return atoi(prompt[0]) - 48;
 }
-*/

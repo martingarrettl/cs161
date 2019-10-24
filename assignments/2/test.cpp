@@ -2,8 +2,8 @@
 
 //test conditions
 int main() {
-  string str = "a";
-  // cout << get_int(str) << endl;
+  string str = "nooo";
+  cout << get_int();
 
   return 0;
 }
