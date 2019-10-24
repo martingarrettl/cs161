@@ -1,6 +1,5 @@
 #include "helper_functions.h"
 
-
 /****************************************************************************
 Function: equality_test()
 Description: Determine if two integers are equal
@@ -179,7 +178,6 @@ string to_upper(string sentence) {
   return new_string;
 }
 
-
 /****************************************************************************
 Function: to_lower()
 Description:
@@ -207,6 +205,7 @@ Parameters: char character
 Pre-Conditions: take character input
 Post-Conditions: return decimal value of character as an int
 ***************************************************************************/
+
 int atoi(char character){
   int i = character;
   return i;
