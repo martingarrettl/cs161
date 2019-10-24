@@ -5,7 +5,6 @@
 
 //=======================================
 // include dependencies
-
 #include <iostream> // cin.clear(), cin.ignore(), cin.fail()
 #include <string> // getline(), .length(), size(), .at()
 #include <cmath> // pow(), abs()
@@ -29,5 +28,6 @@ int word_count(string sentence);
 string to_upper(string sentence);
 string to_lower(string sentence);
 int get_int(string prompt);
+int atoi(char character);
 
 #endif //HELPER_FUNCTIONS_H

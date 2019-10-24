@@ -169,7 +169,7 @@ Parameters: string sentence
 Pre-Conditions: Take string as parameter
 Post-Conditions: Return string
 ***************************************************************************/
-/*
+
 string to_upper(string sentence) {
   string new_string;
   for (int i; i < sentence.length(); i++) {
@@ -190,7 +190,7 @@ Parameters:
 Pre-Conditions:
 Post-Conditions:
 ***************************************************************************/
-/*
+
 string to_lower(string sentence) {
   string new_string;
   for (int i; i < sentence.length(); i++) {
@@ -204,21 +204,37 @@ string to_lower(string sentence) {
 }
 
 /****************************************************************************
+Function: atoi()
+Description: turns a character into an integer value
+Parameters: char character
+Pre-Conditions: take character input
+Post-Conditions: return decimal value of character as an int
+***************************************************************************/
+int atoi(char character){
+  int i = character;
+  return i;
+}
+
+/****************************************************************************
 Function:
 Description:
 Parameters:
 Pre-Conditions:
 Post-Conditions:
 ***************************************************************************/
+/*
 int get_int(string prompt) {
   int stop = 0;
+  char test = atoi(prompt);
   do {
-    if (numbers_present(prompt) == 1 && letters_present(prompt) == 0) {
+    if (is_int(test) == 1) {
       stop = 1;
-      return prompt;
+      int value = atoi(test);
+      return value;
     } else {
       cout << "Invalid input, please input an integer: ";
       cin >> prompt;
     }
   } while(stop = 0);
 }
+*/
