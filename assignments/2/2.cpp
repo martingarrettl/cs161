@@ -11,6 +11,7 @@
 #include <string> // getline(), .length(), size(), .at()
 #include <cmath> // pow(), abs()
 
+<<<<<<< HEAD
 using namespace std;
 
 int equality_test(int num1, int num1){
@@ -63,6 +64,20 @@ int check_range(int test_value, int lower_bound, int upper_bound) {
 }
 
 
+=======
+bool is_int(string num) {
+  for (int i=0; i < num.length(); ++i) {
+    if (a[i] >= 48) {
+      if (a[i] <= 57) {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+}
+
+>>>>>>> 75106a91aee2c6675b99743e028553b99f743c32
 main() {
   int a, b, c;
   bool f,g;
