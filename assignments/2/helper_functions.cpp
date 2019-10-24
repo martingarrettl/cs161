@@ -1,8 +1,5 @@
-#include <iostream> // cin.clear(), cin.ignore(), cin.fail()
-#include <string> // getline(), .length(), size(), .at()
-#include <cmath> // pow(), abs()
 #include "helper_functions.h"
-using namespace std;
+
 
 /****************************************************************************
 Function: equality_test()
@@ -221,7 +218,7 @@ Description: Takes a prompt from the user as a string literal, checks if input
              is a valid integer, returns provided integer
 Parameters: string prompt
 Pre-Conditions: takes string as parameter
-Post-Conditions:
+Post-Conditions: returns provided integer
 ***************************************************************************/
 
 int get_int() {

@@ -6,13 +6,7 @@
 **Input:
 **Output:
 ***************************************************************/
-
-#include <iostream> // cin.clear(), cin.ignore(), cin.fail()
-#include <string> // getline(), .length(), size(), .at()
-#include <cmath> // pow(), abs()
-#include "helper_functions.h" // assignment function library
-
-using namespace std;
+#include "helper_functions.h"
 
 main() {
 
