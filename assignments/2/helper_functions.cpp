@@ -53,6 +53,8 @@ Post-Conditions: return true if num is even, otherwise return false
 bool is_even(int num) {
   if (num % 2 == 0) {
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -66,6 +68,8 @@ Post-Conditions: Return true if test_value is between upper and lower bound
 bool check_range(int test_value, int lower_bound, int upper_bound) {
   if (upper_bound > test_value && lower_bound < test_value) {
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -110,10 +114,9 @@ bool numbers_present(string sentence) {
   for (int i=0; i < sentence.length(); i++) {
     if (sentence[i] >= 48 && sentence[i] <= 57){
       return true;
-    } else {
-      return false;
     }
   }
+  return false;
 }
 
 /****************************************************************************
@@ -136,14 +139,49 @@ bool letters_present(string sentence) {
 }
 
 /****************************************************************************
+Function: contains_sub_string()
+Description: Indicates if a substring exists within a sentence
+Parameters: string sentence, string subsentence
+Pre-Conditions: take two strings as parameters
+Post-Conditions: returns true if subsentence exists within string, false otherwise
+***************************************************************************/
+bool contains_sub_string(string sentence, string subsentence) {
+  string new_string = "";
+  if (sentence == subsentence) {
+    return true;
+  } else {
+    for (int i = 0; i < sentence.length(); i++) {
+      if (sentence[i] == subsentence[0]) {
+        for (int j = 0; j < subsentence.length(); j++) {
+          if (sentence[i + j] == subsentence[j]) {
+            new_string += subsentence[j];
+          } else {
+            new_string = "";
+          }
+            if (new_string == subsentence) {
+              return true;
+            }
+        }
+      }
+    }
+  }
+  return false;
+}
+/****************************************************************************
 Function:
 Description:
 Parameters:
 Pre-Conditions:
 Post-Conditions:
 ***************************************************************************/
-bool contains_sub_string(string sentence, string subsentence) {
-
+bool is_letter(char character) {
+  if (character >= 65 && character <= 90){
+    return true;
+  } else if (character >= 95 && character <= 122){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /****************************************************************************
@@ -154,8 +192,17 @@ Pre-Conditions:
 Post-Conditions:
 ***************************************************************************/
 int word_count(string sentence) {
-
+  int word_count = 0;
+  for (int i = 0; i < sentence.length(); i++) {
+    if (sentence[i] == 32 && is_letter(sentence[i - 1])
+    && is_letter(sentence[i + 1])) {
+      word_count += 1;
+    }
+  }
+  return word_count + 1;
 }
+/* this function isn't great, doesn't count words immediately following numbers
+or other non-letter characters. Have to assume it's an all word string to use */
 
 /****************************************************************************
 Function: to_upper()
@@ -179,10 +226,11 @@ string to_upper(string sentence) {
 
 /****************************************************************************
 Function: to_lower()
-Description:
-Parameters:
-Pre-Conditions:
-Post-Conditions:
+Description: Takes a string and changes all capital letters to lowercase
+             while leaving all non-letters unchanged.
+Parameters: string sentence
+Pre-Conditions: take string as input
+Post-Conditions: return string
 ***************************************************************************/
 string to_lower(string sentence) {
   string new_string;
@@ -198,7 +246,7 @@ string to_lower(string sentence) {
 
 /****************************************************************************
 Function: atoi()
-Description: turns a character into an integer value
+Description: Takes a character and returns its corresponding dec value
 Parameters: char character
 Pre-Conditions: take character input
 Post-Conditions: return decimal value of character as an int
@@ -216,17 +264,12 @@ Parameters: string prompt
 Pre-Conditions: takes string as parameter
 Post-Conditions: returns provided integer
 ***************************************************************************/
-int get_int() {
-  string prompt = "";
-  cout << "Input an integer: ";
-  cin >> prompt;
+int get_int(string prompt) {
+  string new_string;
+  new_string = prompt[0];
   do {
-    if (is_int(prompt) == 1) {
-      break;
-    } else {
-      cout << "Invalid input, please input an integer: ";
-      cin >> prompt;
-    }
-  } while (is_int(prompt) == 0);
-  return atoi(prompt[0]) - 48;
+    cout << "Invalid input, please input an integer (0-9): ";
+    cin >> new_string;
+  } while (is_int(new_string) == 0);
+  return atoi(new_string[0]) - 48; //defined atoi just above, please dont doc me
 }

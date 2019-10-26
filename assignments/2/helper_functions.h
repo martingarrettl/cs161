@@ -27,7 +27,8 @@ bool contains_sub_string(string sentence, string subsentence);
 int word_count(string sentence);
 string to_upper(string sentence);
 string to_lower(string sentence);
-int get_int();
+int get_int(string prompt);
 int atoi(char character);
+bool is_letter(char character);
 
 #endif //HELPER_FUNCTIONS_H
