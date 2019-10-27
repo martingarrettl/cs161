@@ -139,12 +139,11 @@ main() {
     cout << "\tFAILED\n\n");
 
 // get_int(), i assume you just determine pass or fail since the user is doin this
-  cout << "Testing get_int()...\n";
-
   string user_int;
-
+  
+  cout << "Testing get_int()...\n";
   cout << "\tInput an integer: ";
   cin >> user_int;
-  cout << "\t" << get_int(user_int) << endl;
+  cout << "\t" << get_int(user_int) << "\n\n";
   return 0;
 }

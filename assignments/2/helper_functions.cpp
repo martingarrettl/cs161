@@ -264,12 +264,20 @@ Parameters: string prompt
 Pre-Conditions: takes string as parameter
 Post-Conditions: returns provided integer
 ***************************************************************************/
+/* wasn't positive if i should be making this for any
+integer value, or just 0-9, so i did the easier of the two */
+
+
 int get_int(string prompt) {
   string new_string;
-  new_string = prompt[0];
-  do {
-    cout << "Invalid input, please input an integer (0-9): ";
-    cin >> new_string;
-  } while (is_int(new_string) == 0);
-  return atoi(new_string[0]) - 48; //defined atoi just above, please dont doc me
+  new_string = prompt;
+  if (is_int(new_string) == 0) {
+    do {
+      cout << "Invalid input, please input an integer (0-9): ";
+      cin >> new_string;
+    } while (is_int(new_string) == 0);
+    return atoi(new_string[0]) - 48; //defined atoi just above, please dont dock me
+  } else {
+    return atoi(new_string[0]) - 48;
+  }
 }
