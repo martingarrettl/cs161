@@ -28,7 +28,7 @@ int word_count(string sentence);
 string to_upper(string sentence);
 string to_lower(string sentence);
 int get_int(string prompt);
-int atoi(char character);
+int a2i(char character);
 bool is_letter(char character);
 
 #endif //HELPER_FUNCTIONS_H

@@ -114,11 +114,6 @@ main() {
     cout << "\tFAILED\n\n");
 
 // word_count()
-  cout << "Testing word_count(\"This contains 11 four words\")...\n";
-  cout << "\tExpected: 4\n \tActual: " << word_count("this contains 11 four words") << endl;
-  (word_count("this contains 11 four words")==4? cout << "\tPASSED\n\n" :
-    cout << "\tFAILED\n\n");
-
   cout << "Testing word_count(\"This contains four words\")...\n";
   cout << "\tExpected: 4\n \tActual: " << word_count("this contains four words") << endl;
   (word_count("this contains four words")==4? cout << "\tPASSED\n\n" :
@@ -132,15 +127,15 @@ main() {
     cout << "\tPASSED\n\n": cout << "\tFAILED\n\n");
 
 // to_lower()
-  cout << "Testing to_lower(\"NOTLOWERCASE27\")...\n";
-  cout << "\tExpected: notlowercase27\n\tActual: ";
-  cout << to_lower("NOTLOWERCASE27") << endl;
-  (to_lower("NOTLOWERCASE27")=="notlowercase27"? cout << "\tPASSED\n\n" :
+  cout << "Testing to_lower(\"1NOT2LOWERCASE27\")...\n";
+  cout << "\tExpected: 1not2lowercase27\n\tActual: ";
+  cout << to_lower("1NOT2LOWERCASE27") << endl;
+  (to_lower("1NOT2LOWERCASE27")=="1not2lowercase27"? cout << "\tPASSED\n\n" :
     cout << "\tFAILED\n\n");
 
 // get_int(), i assume you just determine pass or fail since the user is doin this
   string user_int;
-  
+
   cout << "Testing get_int()...\n";
   cout << "\tInput an integer: ";
   cin >> user_int;

@@ -168,11 +168,11 @@ bool contains_sub_string(string sentence, string subsentence) {
   return false;
 }
 /****************************************************************************
-Function:
-Description:
-Parameters:
-Pre-Conditions:
-Post-Conditions:
+Function: is_letter()
+Description: it's letters_present, but for a character because im lazy
+Parameters: char character
+Pre-Conditions: Takes a character as a parameter
+Post-Conditions: Returns true if input is, in fact, a letter.
 ***************************************************************************/
 bool is_letter(char character) {
   if (character >= 65 && character <= 90){
@@ -185,11 +185,11 @@ bool is_letter(char character) {
 }
 
 /****************************************************************************
-Function:
-Description:
-Parameters:
-Pre-Conditions:
-Post-Conditions:
+Function: word_cout()
+Description: Counts the number of words in a string, sort of. See end comment.
+Parameters: string sentence
+Pre-Conditions: Takes string as a parameter
+Post-Conditions: Returns the number of words in a specific type of sentence.
 ***************************************************************************/
 int word_count(string sentence) {
   int word_count = 0;
@@ -202,7 +202,8 @@ int word_count(string sentence) {
   return word_count + 1;
 }
 /* this function isn't great, doesn't count words immediately following numbers
-or other non-letter characters. Have to assume it's an all word string to use */
+or other non-letter characters. Have to assume it's an all word string to use.
+really, it's just more of a slightly more specific space counter */
 
 /****************************************************************************
 Function: to_upper()
@@ -210,7 +211,7 @@ Description: Capitalizes all letters in a given string and leaves non-letters
              characters unchanged
 Parameters: string sentence
 Pre-Conditions: Take string as parameter
-Post-Conditions: Return string
+Post-Conditions: Return string, but this time all upper case
 ***************************************************************************/
 string to_upper(string sentence) {
   string new_string;
@@ -230,7 +231,7 @@ Description: Takes a string and changes all capital letters to lowercase
              while leaving all non-letters unchanged.
 Parameters: string sentence
 Pre-Conditions: take string as input
-Post-Conditions: return string
+Post-Conditions: return string, but this time all lower case.
 ***************************************************************************/
 string to_lower(string sentence) {
   string new_string;
@@ -245,13 +246,13 @@ string to_lower(string sentence) {
 }
 
 /****************************************************************************
-Function: atoi()
+Function: a2i()
 Description: Takes a character and returns its corresponding dec value
 Parameters: char character
 Pre-Conditions: take character input
 Post-Conditions: return decimal value of character as an int
 ***************************************************************************/
-int atoi(char character){
+int a2i(char character){
   int i = character;
   return i;
 }
@@ -264,9 +265,8 @@ Parameters: string prompt
 Pre-Conditions: takes string as parameter
 Post-Conditions: returns provided integer
 ***************************************************************************/
-/* wasn't positive if i should be making this for any
-integer value, or just 0-9, so i did the easier of the two */
-
+/* wasn't positive if i should be making this for any integer value,
+or just 0-9, so i did the easier of the two */
 
 int get_int(string prompt) {
   string new_string;
@@ -276,8 +276,8 @@ int get_int(string prompt) {
       cout << "Invalid input, please input an integer (0-9): ";
       cin >> new_string;
     } while (is_int(new_string) == 0);
-    return atoi(new_string[0]) - 48; //defined atoi just above, please dont dock me
+    return a2i(new_string[0]) - 48; //defined atoi just above, please dont dock me
   } else {
-    return atoi(new_string[0]) - 48;
+    return a2i(new_string[0]) - 48;
   }
 }
