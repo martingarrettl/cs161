@@ -259,25 +259,41 @@ int a2i(char character){
 
 /****************************************************************************
 Function: get_int()
-Description: Takes a prompt from the user as a string literal, checks if input
-             is a valid integer, returns provided integer
-Parameters: string prompt
-Pre-Conditions: takes string as parameter
+Description: Takes a ref int as a parameter, has user assign it and checks if that
+             bad boi is a real int or not then assigns that value to the ref.
+Parameters: int &num
+Pre-Conditions: takes integer variable as parameter
 Post-Conditions: returns provided integer
 ***************************************************************************/
-/* wasn't positive if i should be making this for any integer value,
-or just 0-9, so i did the easier of the two */
+void get_int(int &num) {
+  int repeat = 1;
 
-int get_int(string prompt) {
-  string new_string;
-  new_string = prompt;
-  if (is_int(new_string) == 0) {
-    do {
-      cout << "Invalid input, please input an integer (0-9): ";
-      cin >> new_string;
-    } while (is_int(new_string) == 0);
-    return a2i(new_string[0]) - 48; //defined atoi just above, please dont dock me
+  cin >> num;
+
+  while (repeat == 1) {
+    if (cin.fail() == true) {
+      cin.clear();
+      cin.ignore(1000000000,'\n');
+      cout << "\tERROR: Non-Integer Input\n\tInput an integer: ";
+      cin >> num;
+    } else {
+      repeat = 0;
+    }
+  }
+}
+
+int greatest(int num1, int num2) {
+  if (num1 < num2) {
+    return num2;
   } else {
-    return a2i(new_string[0]) - 48;
+    return num1;
+  }
+}
+
+int lesser(int num1, int num2){
+  if (num1 < num2) {
+    return num1;
+  } else {
+    return num2;
   }
 }

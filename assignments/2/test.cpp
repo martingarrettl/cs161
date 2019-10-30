@@ -1,49 +1,30 @@
 #include <iostream>
 using namespace std;
 
-bool is_num(char num) {
-    if (num >= 48 && num <= 57) {
-      return true;
-  } else {
-    return false;
-  }
-}
+int get_int(int &num) {
+  int repeat = 1;
 
-bool is_letter(char character) {
-  if (character >= 65 && character <= 90){
-    return true;
-  } else if (character >= 95 && character <= 122){
-    return true;
-  } else {
-    return false;
-  }
-}
+  cin >> num;
 
-int word_count(string sentence) {
-  int word_count = 0;
-  for (int i = 0; i < sentence.length(); i++) {
-    if (sentence[i] == 32 && is_letter(sentence[i - 1])
-    && is_letter(sentence[i + 1])) {
-      word_count += 1;
-    } else if (sentence[i] == 32 && is_num(sentence[i + 1]) && is_letter(sentence[i-1])){
-      word_count += 1;
+  while (repeat == 1) {
+    if (cin.fail() == true) {
+      cin.clear();
+      cin.ignore(1000000000,'\n');
+      cout << "\tERROR: Non-Integer Input\n\tInput an integer: ";
+      cin >> num;
+    } else {
+      repeat = 0;
     }
   }
-  return word_count + 1;
 }
 
-
 //test conditions
-int main() {
-  cout << "Testing word_count(\"12 This contains 11 four words 32\")...\n";
-  cout << "\tExpected: 4\n \tActual: " << word_count("12 This contains 11 four words 32") << endl;
-  (word_count("12 This contains 11 four words 32")==4? cout << "\tPASSED\n\n" :
-    cout << "\tFAILED\n\n");
+int main () {
+  int a;
 
-  cout << "Testing word_count(\"This contains four words\")...\n";
-  cout << "\tExpected: 4\n \tActual: " << word_count("this contains four words") << endl;
-  (word_count("this contains four words")==4? cout << "\tPASSED\n\n" :
-    cout << "\tFAILED\n\n");
+  cout << "hit me wit an int, my dude: ";
+  get_int(a);
 
+  cout << a << endl;
   return 0;
 }

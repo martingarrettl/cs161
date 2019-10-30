@@ -27,8 +27,10 @@ bool contains_sub_string(string sentence, string subsentence);
 int word_count(string sentence);
 string to_upper(string sentence);
 string to_lower(string sentence);
-int get_int(string prompt);
+void get_int(int &num);
 int a2i(char character);
 bool is_letter(char character);
+int greatest(int num1, int num2);
+int lesser(int num1, int num2);
 
 #endif //HELPER_FUNCTIONS_H
