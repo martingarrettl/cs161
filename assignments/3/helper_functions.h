@@ -1,19 +1,23 @@
-//=======================================
-// include guard
+/******************************************************************************
+ Include guard
+******************************************************************************/
 #ifndef HELPER_FUNCTIONS_H
 #define HELPER_FUNCTIONS_H
 
-//=======================================
-// include dependencies
+
+/******************************************************************************
+ Include dependencies
+******************************************************************************/
 #include <iostream> // cin.clear(), cin.ignore(), cin.fail()
 #include <string> // getline(), .length(), size(), .at()
 #include <cmath> // pow(), abs()
 #include "helper_functions.h"
+
 using namespace std;
 
-//=======================================
-// declarations
-
+/******************************************************************************
+ Declarations
+******************************************************************************/
 bool check_range(int lower_bound, int upper_bound, int test_value);
 bool is_capital(char letter);
 bool is_even(int num);
@@ -32,5 +36,7 @@ int a2i(char character);
 bool is_letter(char character);
 int greatest(int num1, int num2);
 int lesser(int num1, int num2);
+bool to_lowest_terms(int &numerator, int &denominator);
+int g_c_d(int num1, int num2);
 
 #endif //HELPER_FUNCTIONS_H
