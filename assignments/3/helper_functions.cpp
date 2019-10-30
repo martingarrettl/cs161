@@ -320,10 +320,11 @@ Pre-Conditions: take two integers as paramters
 Post-Conditions: returns greatest common divisor for both integers
 ***************************************************************************/
 int g_c_d(int num1, int num2) {
-  for (int i=0; i <= lesser(num1,num2);i++) {
-    if (lesser(num1, num2) % (lesser(num1,num2) - i) == 0
-    && greatest(num1,num2) % (lesser(num1,num2) - i) == 0) {
-      return lesser(num1, num2) - i;
+  int a = lesser(num1, num2), b = greatest(num1, num2);
+  for (int i=0; i <= a;i++) {
+    if (a % (a - i) == 0
+    && b % (a - i) == 0) {
+      return a - i;
     }
   }
 }
