@@ -1,3 +1,12 @@
+/******************************************************************************
+* Program: fractions.cpp
+* Author: Garrett Martin
+* Date: 10/30/2019
+* Description: A program to reduce a fraction to lowest terms.
+* Input: int numerator, int denominator
+* Output: Reduced fraction
+******************************************************************************/
+
 #include "helper_functions.h"
 
 int main() {
@@ -21,5 +30,6 @@ int main() {
     cout << "Do you want to do another simplification? (0-no, 1-yes): ";
     get_int(repeat);
   }
+
   return 0;
 }
