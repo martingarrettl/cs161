@@ -265,7 +265,7 @@ Parameters: int &num
 Pre-Conditions: takes integer variable as parameter
 Post-Conditions: returns provided integer
 ***************************************************************************/
-void get_int(int &num) {
+void gimmean_int(int &num) {
   int repeat = 1;
 
   cin >> num;
