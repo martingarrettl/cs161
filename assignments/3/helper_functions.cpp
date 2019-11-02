@@ -283,10 +283,10 @@ void gimmean_int(int &num) {
 }
 
 /****************************************************************************
-Function: to_lowest_terms()
-Description: reduce a fraction to it's simplest form. ex: 25/100 > 1/4
-Parameters: int numerator, int denominator
-Pre-Conditions: take two ints as parameters
+Function: 
+Description: 
+Parameters: 
+Pre-Conditions: 
 Post-Conditions:
 ***************************************************************************/
 int greatest(int num1, int num2) {
@@ -298,10 +298,10 @@ int greatest(int num1, int num2) {
 }
 
 /****************************************************************************
-Function: to_lowest_terms()
-Description: reduce a fraction to it's simplest form. ex: 25/100 > 1/4
-Parameters: int numerator, int denominator
-Pre-Conditions: take two ints as parameters
+Function: 
+Description: 
+Parameters: 
+Pre-Conditions: 
 Post-Conditions:
 ***************************************************************************/
 int lesser(int num1, int num2){
@@ -331,7 +331,8 @@ int g_c_d(int num1, int num2) {
 
 /****************************************************************************
 Function: to_lowest_terms()
-Description: reduce a fraction to it's simplest form. ex: 25/100 > 1/4
+Description: reduce fraction components to their simplest form. 
+             ex: 25 & 100 > 1 & 4
 Parameters: int numerator, int denominator
 Pre-Conditions: take two ints as parameters
 Post-Conditions:
