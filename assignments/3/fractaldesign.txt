@@ -1,0 +1,4 @@
+n rows above middle row
+n rows below middle row
+middle row is only row with all n *
+every odd row has a single *

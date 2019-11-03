@@ -17,11 +17,12 @@ Pre-Conditions: takes two int as parameters
 Post-Conditions: Print a fractal pattern to console
 ***************************************************************************/
 void pattern(int n, int col) {
-  int repeat=1;
-    for (int i = col; i < n; i++) cout << " ";
-    for (int i = n; )
-    cout << endl;
-    for (int i = 0; i , 2*n ; i++) pattern();
+  int temp = n;
+  for (int i=0; i < (temp/2); i++) cout << "  ";
+  for (int i=0; i <= col; i++) cout << " *";
+  cout << endl;
+  --temp;
+  if (n > 0) pattern(n-1, col+1);
 }
 // Description:
 // The longest line of the pattern has n starts beginning in column col of the output.
