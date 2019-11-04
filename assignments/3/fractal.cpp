@@ -6,7 +6,6 @@
 * Input:
 * Output:
 ****************************************************************************/
-
 #include "helper_functions.h"
 
 /****************************************************************************
@@ -17,16 +16,18 @@ Pre-Conditions: takes two int as parameters
 Post-Conditions: Print a fractal pattern to console
 ***************************************************************************/
 void pattern(int n, int col) {
-  int temp = n;
-  for (int i=0; i < (temp/2); i++) cout << "  ";
-  for (int i=0; i <= col; i++) cout << " *";
+//print an * at the midpoint
+  for (int i=0; i < abs(n+col) / 2 ; i++) cout << "  ";
+  for (int i=0; i < abs(n-(n-1)) ; i++) cout << "* ";
   cout << endl;
-  --temp;
-  if (n > 0) pattern(n-1, col+1);
+//print variable *
+  for (int i=0; i < abs(n+col) - ((n*col)/2) - 2; i++) cout << "  ";
+  for (int i=0; i < (n * col)/2;i++) cout << "* ";
+  cout << endl;
+
+
+  if (col <= 4 * n + 2) pattern(n-1, col + 1);
 }
-// Description:
-// The longest line of the pattern has n starts beginning in column col of the output.
-// For example, the above pattern is produce by the call pattern(7, 0).
 
 int main() {
   int n=7, col=0, repeat=0;

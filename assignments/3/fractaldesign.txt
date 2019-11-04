@@ -2,3 +2,26 @@ n rows above middle row
 n rows below middle row
 middle row is only row with all n *
 every odd row has a single *
+
+The problem is asking me to design a recursive function that takes
+integers n and c and returns a pattern to the console comprised of
+asterisks and spaces based on the values of n and c.
+
+
+      *
+    * * *
+      *
+  * * * * *
+      *
+    * * *
+      *
+* * * * * * *
+      *
+    * * *
+      *
+  * * * * *
+      *
+    * * *
+      *
+
+when n=7 and c=0.
