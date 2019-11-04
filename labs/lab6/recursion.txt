@@ -1,0 +1,17 @@
+1. if user enters 5, how many times will factorial be executed:
+    5 times. initial, 5-1, 5-2, 5-3, 5-4.
+
+2. What if line 1 is missing?
+  if line 1 is missing you're going to get a compile error because
+  factorial() wont be defined by the time it gets called in main().
+
+3. what if "if (n==1) return 1" is missing.
+  compile error because of the else statement
+  or if that's also missing then the function will keep calling itself
+  well into the -n range.
+
+4. There is an int variable n in main function and an int n in factorial.
+    are they the same?
+
+    Nah, but they do end up being the same value. When the function is called
+    you're assigning the function's n as the same value as the main()'s n.
