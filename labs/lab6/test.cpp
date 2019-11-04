@@ -2,16 +2,7 @@
 using namespace std;
 
 int fib_iter(int n){
-  int fib;
-  if (n == 0) {
-    fib = 0;
-  } else if (n==1) {
-    fib = 1;
-  } else {
-      fib = 2;
-      fib = fib + (fib - 1);
-    }
-  return fib;
+
   }
 
 int fib_rec(int n) {
@@ -19,6 +10,7 @@ int fib_rec(int n) {
 
   if (n>0) {
     fib = fib + fib_rec(n-1);
+    cout << fib << endl;
   } else {
     fib = 0;
   }
@@ -26,7 +18,9 @@ int fib_rec(int n) {
 }
 
 int main() {
-  int n=7;
-  cout << fib_iter(n) << endl;
-  cout << fib_rec(n) << endl;
+  int n;
+  cout << "n: ";
+  cin >> n;
+  cout << "iterative: " << fib_iter(n) << endl;
+  cout << "recursive: " << fib_rec(n) << endl;
 }
