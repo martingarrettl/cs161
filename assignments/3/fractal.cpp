@@ -16,18 +16,20 @@ Pre-Conditions: takes two int as parameters
 Post-Conditions: Print a fractal pattern to console
 ***************************************************************************/
 void pattern(int n, int col) {
-//print an * at the midpoint
-  for (int i=0; i < abs(n+col) / 2 ; i++) cout << "  ";
-  for (int i=0; i < abs(n-(n-1)) ; i++) cout << "* ";
-  cout << endl;
-//print variable *
-  for (int i=0; i < abs(n+col) - ((n*col)/2) - 2; i++) cout << "  ";
-  for (int i=0; i < (n * col)/2;i++) cout << "* ";
+
+  if (n > 0) {
+  pattern(n-2,col-2);
+  for (int i = 0; i < col; i++) cout << "  ";
+  for (int i = 0; i < n; i++) cout << "* ";
   cout << endl;
 
-
-  if (col <= 4 * n + 2) pattern(n-1, col + 1);
+  for (int i = 0; i < col; i++) cout << "  ";
+  for (int i = 0; i < n; i++) cout << "* " ;
+  cout << endl;
+  pattern(n+2,col+2);
 }
+}
+
 
 int main() {
   int n=7, col=0, repeat=0;
