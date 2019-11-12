@@ -258,7 +258,7 @@ int a2i(char character){
 }
 
 /****************************************************************************
-Function: get_int()
+Function: gimmean_int()
 Description: Takes a ref int as a parameter, has user assign it and checks if that
              bad boi is a real int or not then assigns that value to the ref.
 Parameters: int &num
