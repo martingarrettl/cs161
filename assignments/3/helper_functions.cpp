@@ -283,10 +283,10 @@ void gimmean_int(int &num) {
 }
 
 /****************************************************************************
-Function: 
-Description: 
-Parameters: 
-Pre-Conditions: 
+Function:
+Description:
+Parameters:
+Pre-Conditions:
 Post-Conditions:
 ***************************************************************************/
 int greatest(int num1, int num2) {
@@ -298,10 +298,10 @@ int greatest(int num1, int num2) {
 }
 
 /****************************************************************************
-Function: 
-Description: 
-Parameters: 
-Pre-Conditions: 
+Function:
+Description:
+Parameters:
+Pre-Conditions:
 Post-Conditions:
 ***************************************************************************/
 int lesser(int num1, int num2){
@@ -310,43 +310,4 @@ int lesser(int num1, int num2){
   } else {
     return num2;
   }
-}
-
-/****************************************************************************
-Function: g_c_d()
-Description: a function to calculate the greatest common divisor of two ints
-Parameters: int num1, int num2
-Pre-Conditions: take two integers as paramters
-Post-Conditions: returns greatest common divisor for both integers
-***************************************************************************/
-int g_c_d(int num1, int num2) {
-  int a = lesser(num1, num2), b = greatest(num1, num2);
-  for (int i=0; i <= a;i++) {
-    if (a % (a - i) == 0
-    && b % (a - i) == 0) {
-      return a - i;
-    }
-  }
-}
-
-/****************************************************************************
-Function: to_lowest_terms()
-Description: reduce fraction components to their simplest form. 
-             ex: 25 & 100 > 1 & 4
-Parameters: int numerator, int denominator
-Pre-Conditions: take two ints as parameters
-Post-Conditions:
-***************************************************************************/
-bool to_lowest_terms(int &numerator, int &denominator) {
-  int gcd;
-
-  if (denominator == 0) {
-      return false;
-  }
-
-  gcd = g_c_d(numerator, denominator);
-  numerator = numerator / gcd;
-  denominator = denominator / gcd;
-
-  return true;
 }
