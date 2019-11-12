@@ -2,9 +2,9 @@
 * Program: fractal.cpp
 * Author: Garrett Martin
 * Date: 10/30/2019
-* Description:
-* Input:
-* Output:
+* Description: draws a self-similar pattern, yo 
+* Input: coupla integers
+* Output: a pattern
 ****************************************************************************/
 #include "helper_functions.h"
 

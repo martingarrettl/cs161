@@ -283,11 +283,11 @@ void gimmean_int(int &num) {
 }
 
 /****************************************************************************
-Function:
-Description:
-Parameters:
-Pre-Conditions:
-Post-Conditions:
+Function: greatest()
+Description: returns the greater of two integers
+Parameters: int num1, int num2
+Pre-Conditions: takes two integers
+Post-Conditions: returns greatest of the two
 ***************************************************************************/
 int greatest(int num1, int num2) {
   if (num1 < num2) {
@@ -298,11 +298,11 @@ int greatest(int num1, int num2) {
 }
 
 /****************************************************************************
-Function:
-Description:
-Parameters:
-Pre-Conditions:
-Post-Conditions:
+Function: lesser()
+Description: returns the lesser of two integers
+Parameters: int num1, int num2
+Pre-Conditions: takes two integers
+Post-Conditions: returns integer of least value
 ***************************************************************************/
 int lesser(int num1, int num2){
   if (num1 < num2) {
