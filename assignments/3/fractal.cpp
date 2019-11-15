@@ -6,31 +6,6 @@
 * Input: coupla integers
 * Output: a pattern
 ****************************************************************************/
-<<<<<<< HEAD
-#include "helper_functions.h"
-
-/****************************************************************************
-Function: pattern()
-Description: draws a fractal pattern comprised of asterisks.
-Parameters: int n, int col
-Pre-Conditions: takes two int as parameters
-Post-Conditions: Print a fractal pattern to console
-***************************************************************************/
-void pattern(int n, int col) {
-
-  if (n > 0) {
-  pattern(n-2,col-2);
-  for (int i = 0; i < col; i++) cout << "  ";
-  for (int i = 0; i < n; i++) cout << "* ";
-  cout << endl;
-
-  for (int i = 0; i < col; i++) cout << "  ";
-  for (int i = 0; i < n; i++) cout << "* " ;
-  cout << endl;
-  pattern(n+2,col+2);
-}
-}
-=======
 #include <iostream>
 
 using namespace std;
@@ -38,8 +13,6 @@ using namespace std;
 void pattern(int n, int col);
 void gimmean_int(int &num);
 bool is_odd(int num);
->>>>>>> 5ebae9d6f981a26d1a80f583ac432c8ed90a3f15
-
 
 int main() {
   int n=0, col=0, repeat=0;
