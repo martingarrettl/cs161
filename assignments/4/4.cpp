@@ -1,18 +1,10 @@
-#include <iostream>
-#include <string>
+#include "afunc.h"
 #include <fstream>
 using namespace std;
 
-bool is_palindrome(char *str);
-char * purge_string(char *str);
-char to_lower(char a);
-bool is_letter(char character);
-void cleaner(char *a);
-char reverse(char a);
-void gimmean_int(int &num);
-
 int main() {
   string filedata, filename, userstring;
+  char 
   int choice, options=1, repeat=1;
 //***********************vREMOVETHISv*************
   ifstream file;
@@ -40,10 +32,7 @@ while(repeat==1) {
 
 /************* User string input option ***********
     cout << "Input a string: ";
-    get_cstring(userstring);
-    if (strlen(userstring) > 1024) {
-      cout << "ERROR: String exceeds maximum length\nInput a string: ";
-    }
+    cin.getline()
 *************************************************/
 
     cout << "Choose an Option\n\t(1) Palindrome Detector\n\t(2) Frequency of all words"
@@ -64,7 +53,7 @@ while(repeat==1) {
         cout << "ERROR: Invalid option, choose again."
       }
     }
-    cout << "This is the repeat 0 for dont, 1 for yep: "
+    cout << "This is the repeat; 0 for dont, 1 for yep: "
     gimmean_int(repeat);
     while (yesonemore==1){
       if (repeat != 0 && repeat !=1){
@@ -77,70 +66,4 @@ while(repeat==1) {
   }
 
   return 0;
-}
-//take a string, read each character see if they're the same forward and backward
-
-bool is_palindrome(char *str) {
-  int length = strlen(str);
-  for (int i=0; i < length; i++)
-}
-
-char * purge_string(char *str) {
-
-
-}
-
-void cleaner(char *a) {
-  int length = strlen(a);
-
-  for (int i=0; i < length; i++) {
-    if (is_letter(a[i])==true) {
-      a[i] = to_lower(a[i]);
-    }
-  }
-}
-
-char reverse(char a){
-  int length = strlen(a), j = 0;
-  char b[length];
-  for (int i = length; i >= 0; i--) {
-    b[j] = a[i];
-    j++;
-  }
-}
-
-bool is_letter(char character) {
-  if (character >= 65 && character <= 90){
-    return true;
-  } else if (character >= 95 && character <= 122){
-    return true;
-  } else {
-    return false;
-  }
-}
-
-char to_lower(char a) {
-  char b;
-  if (a >= 65 && a <=95) {
-    b = (a + 32);
-  } else {
-    b = a;
-  }
-}
-
-void gimmean_int(int &num) {
-  int repeat = 1;
-
-  cin >> num;
-
-  while (repeat == 1) {
-    if (cin.fail() == true) {
-      cin.clear();
-      cin.ignore(1000000000,'\n');
-      cout << "\tERROR: Non-Integer Input\n\tInput an integer: ";
-      cin >> num;
-    } else {
-      repeat = 0;
-    }
-  }
 }
