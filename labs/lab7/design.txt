@@ -1,0 +1,16 @@
+void get_string()
+  prompt user for string input
+
+  get_string(string *){
+    cin.getline(str, length);
+    }
+
+void set_replace_string()
+  copy string, copy takes all non-space letters
+  and changes them to dashes.
+
+int get_search_replace()
+  prompts user for a character, searches original string for matches
+  and replaces corresponding letter in the copied string and returns
+  the blanked out string with some number of letters replaced and the
+  number value of letters replaced.
