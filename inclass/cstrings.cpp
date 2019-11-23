@@ -21,6 +21,14 @@ char * remove_space(char * str){
   }
 }
 */
+
+void remove_space(char *str, char* str_new){
+  strcpy(str, str_new);
+
+  for int i = 0
+    memmove(&temp[i], &temp[i+1], strlen(temp)-i)
+}
+
 void remove_space(char * str, char* str_new){
   strcpy(str, str_new);
   for (int i=0; i < strlen(str);i++){
