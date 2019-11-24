@@ -1,10 +1,18 @@
+/****************************************************************************
+* Program: assignment4.cpp
+* Author: Garrett Martin
+* Date: 11/22/2019
+* Description: program to detect palindromes and count words basically
+* Input: originally, just a string, now just a .txt file
+* Output: TF bool value, all word frequency, specific word frequency
+****************************************************************************/
 #include "afunc.h"
 #include <fstream>
 using namespace std;
 
 int main() {
   string filedata, filename, userstring;
-  char 
+  char
   int choice, options=1, repeat=1;
 //***********************vREMOVETHISv*************
   ifstream file;

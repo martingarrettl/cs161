@@ -5,11 +5,13 @@ using namespace std;
 string *createarray(int size){
   string *arr = new string [size];
 }
+
 void printarray(string *yes, int length) {
   for(int i=0; i < length; i++){
     cout << yes[i] << " ";
   }
 }
+
 int main(){
   int num;
 
