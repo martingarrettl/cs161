@@ -41,6 +41,6 @@ void create_mem3(int *&heap, int size) {
 }
 
 //pass address of pointer to the int
-void create_mem2(int ** ptr, int size) { //ptr to a ptr
+void create_mem2(int *& ptr, int size) { //ptr to a ptr
   *ptr = new int [size];
 }
