@@ -22,23 +22,15 @@ char * remove_space(char * str){
 }
 */
 
-void remove_space(char *str, char* str_new){
-  strcpy(str, str_new);
-
-  for int i = 0
-    memmove(&temp[i], &temp[i+1], strlen(temp)-i)
-}
-
-void remove_space(char * str, char* str_new){
-  strcpy(str, str_new);
-  for (int i=0; i < strlen(str);i++){
-    if (str_new[i]==' '){
-      strcpy(str_new[i+1],str_new[i]);
-      i--;
+void remove_space (char * source, char * destination){
+  strcpy(destination, source);
+  for (int i=0;i<strlen(destination);i++){
+    if (temp[i]==' '){
+       memmove(&temp[i], &temp[i+1], strlen(temp)-i);
+       i--;
     }
   }
 }
-
 int main() {
 //  char cstring[6] = {"hello\0"}
 //  string cppstring = cstring // valid, but c++ to c is not without conversion

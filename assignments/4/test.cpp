@@ -1,124 +1,118 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
-void givenfreq(string *source, string *compare);
-void print_arr(string *arr, int len);
-void token_string(string source, string *result);
-void string_cleaning(string *str, int len);
-string to_lower(string sentence);
-bool is_letter(char character);
-int word_count(string sentence);
-int next_space(string source);
-string cut_string(string source, int index);
+bool is_letter(char character); //already in 4
+void c_to_lower(char * source); // already in 4
+void c_string_cleaning (char * source); // already in 4
+int word_count(char * source);
+void cut_string(char * source, int index);
+int next_space(char * source);
+void tokenize(char * source, string *destination);
 
 int main(){
-  string test = "th9iS is a test s=]tr3ing i8t hAs soMe words test test";
-  string compare = "this is test";
-  string test_words[50];
-  string compare_words[50];
+  char user_string[1025] = "test string test test seeing if i can go longer";
+  char compare_words[1025] = "test string test";
+  string compare_tokens[256];
+  string string_tokens[256];
 
-  string_cleaning(&test, test.length());
-  token_string(test, *&test_words);
-  token_string(compare, *&compare_words);
-  givenfreq(*&test_words, *&compare_words);
-  //cout << test_words[0] << endl;
+  tokenize(user_string, *&string_tokens);
+  tokenize(compare_words,*&compare_tokens);
+  /*
+  string_tokens[0] = "hello";
+  string_tokens[1] = "this";
+  string_tokens[2] = "is a string";
+  */
+  //cout << "string: ";
+  //cin.getline(user_string, 1024);
+
+  //cout << "words to compare: ";
+  //cin.getline(compare_words, 1024);
+
+  for (int i=0; i < sizeof(string_tokens)/sizeof(string_tokens[0]);i++){
+    if (string_tokens[i] != "") cout << string_tokens[i] << " ";
+  }
+  cout << endl;
+  for (int i=0; i < sizeof(compare_tokens)/sizeof(compare_tokens[0]);i++){
+    if (compare_tokens[i] != "") cout << compare_tokens[i] << " ";
+  }
+  cout << endl;
+
+  for (int i=0; i < sizeof(compare_tokens)/sizeof(compare_tokens[0]);i++){
+    int a=0;
+    if (compare_tokens[i]=="") break;
+    for (int j=0; j < sizeof(string_tokens)/sizeof(string_tokens[0]);j++){
+      if (compare_tokens[i] == string_tokens[j]) a++;
+    }
+    cout << compare_tokens[i] << ": " << a << endl;
+    a = 0;
+  }
+
   return 0;
 }
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-void givenfreq(string *source, string *compare){
-  int counter=0;
-  for (int j=0; j < 5; j++){
-    for (int i=0; i < 14;i++){
-      if (source[i]==compare[j]){
-        counter++;
+void user_freq(string * string_tokens, string * compare_tokens){
+  for (int i=0; i < sizeof(compare_tokens)/sizeof(compare_tokens[0]);i++){
+    int a=0;
+    if (compare_tokens[i]=="") break;
+    for (int j=0; j < sizeof(string_tokens)/sizeof(string_tokens[0]);j++){
+      if (compare_tokens[i] == string_tokens[j]) a++;
+    }
+    cout << compare_tokens[i] << ": " << a << endl;
+    a = 0;
+  }
+}
+void c_string_cleaning (char * source) {
+  for (int i=0;i<strlen(source);i++){
+    if (is_letter(source[i])==false) {
+      memmove(&source[i], &source[i+1], strlen(source)-i);
+      i--;
+    }
+  }
+}
+
+void c_to_lower(char * source) {
+  for (int i=0;i<strlen(source);i++){
+    if (source[i] >= 65 && source[i] <= 90) {
+      source[i] = source[i] + 32;
+    }
+  }
+}
+
+int next_space(char * source){
+  int count = 0;
+  for (int i=0; i < strlen(source); i++){
+    if (source[i] != 32) count++;
+    else if(source[i] == 32) return count;
+  }
+}
+
+void cut_string(char * source, int index){
+  int count=0;
+  char temp[1024];
+    for (int i=index+1; i < strlen(source);i++){
+      temp[count] = source[i];
+      count++;
+    }
+  strcpy(source, temp);
+}
+
+void tokenize(char * source, string *destination){
+  char temp[1024];
+  strcpy(temp, source);
+  strcat(temp, " ");
+  int count = 0, stop = word_count(source);
+  while (count < stop){
+    for(int j=0; j < strcspn(temp," ");j++){
+      destination[count] += temp[j];
       }
     }
-    cout << compare[j] << ": " << counter << endl;
-    counter = 0;
+  count++;
+  cut_string(temp, strcspn(temp," "));
   }
 }
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-void print_arr(string *arr, int len){
-  for (int i=0; i < len;i++) cout << arr[i];
-  cout << endl;
-}
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-void token_string(string source, string *result){
-  string temp = source + " ";
-  int stop = word_count(temp);
-  int count = 0;
-  for(int x=0;x<stop;x++){
-    for (int i=0; i < next_space(temp); i++) {
-      result[count] += temp[i];
-    }
-    count++;
-    temp = cut_string(temp, next_space(temp));
-    //if (temp[0] == 32 | temp == "") stop = 0;
-  }
-}
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-void string_cleaning(string *str, int len){
-  string temp_str;
-  for (int i=0; i < len;i++){
-    if (is_letter((*str)[i])==true){
-      temp_str += (*str)[i];
-    } else if ((*str)[i]==32) {
-      temp_str += (*str)[i];
-    }
-  }
-  *str = to_lower(temp_str);
-}
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-string to_lower(string sentence) {
-  string new_string;
-  for (int i; i < sentence.length(); i++) {
-    if (sentence[i] >= 65 && sentence[i] <= 90) {
-      new_string += (sentence[i] + 32);
-    } else {
-      new_string += sentence[i];
-    }
-  }
-  return new_string;
-}
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
+
 bool is_letter(char character) {
   if (character >= 65 && character <= 90){
     return true;
@@ -128,51 +122,14 @@ bool is_letter(char character) {
     return false;
   }
 }
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-int word_count(string sentence) {
+
+int word_count(char * source) {
   int word_count = 0;
-  for (int i = 0; i < sentence.length(); i++) {
-    if (sentence[i] == 32 && is_letter(sentence[i - 1])
-    && is_letter(sentence[i + 1])) {
+  for (int i = 0; i < strlen(source); i++) {
+    if (source[i] == 32 && is_letter(source[i - 1])
+    && is_letter(source[i + 1])) {
       word_count += 1;
     }
   }
   return word_count + 1;
-}
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-int next_space(string source){
-  int count = 0;
-  for (int i=0; i < source.length(); i++){
-    if (source[i] != 32) count++;
-    else if(source[i] == 32) return count;
-  }
-}
-/********************************************************************
-Function:
-Description:
-Parameters:
-Pre-Condition(s):
-Post-Condition(s):
-********************************************************************/
-string cut_string(string source, int index){
-  string temp;
-  if (index==0) return source;
-  else {
-    for (int i=index+1; i < source.length();i++){
-      temp += source[i];
-    }
-    return temp;
-  }
 }

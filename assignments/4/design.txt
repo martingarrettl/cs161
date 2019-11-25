@@ -72,3 +72,23 @@ while repeat == 1
 
   print "Choose again? (0-no, 1-yes)"
   inputrange(repeat, 0, 1)
+
+
+
+  /************* EXTRA CREDIT OPTION *************
+
+    cout << "Filename: ";
+    get_string(filename);
+    file.open(filename);
+
+    if (!file.is_open()) {
+      while(!file.is_open()){
+        cout << "Incorrect file name\nFile name: ";
+        get_string(filename);
+        file.open(filename);
+      }
+    }
+
+    file.close();
+
+  ************* END EXTRA CREDIT OPTION *************/
